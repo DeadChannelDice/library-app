@@ -157,7 +157,7 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: var(--grey);
 }
 
-.shelf-area {
+#shelf-area {
   display: flex;
   align-content:flex-start;
   flex-wrap: wrap;
@@ -172,4 +172,12 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: var(--blue);
   color: var(--white);
   border-top: .5rem solid var(--pink);
+}
+
+.modal {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
 }

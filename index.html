@@ -19,9 +19,12 @@
 
       <section id="checkout-area">
         <div class="section-title">Current Read</div>
-        <div class="book-card active">
-          <div class="title">Cracking the Coding Interview</div>
-          <div class="author">Gayle Laakmann McDowell</div>
+
+        <div id="current-read-area">
+          <div class="book-card active">
+            <div class="title">Cracking the Coding Interview</div>
+            <div class="author">Gayle Laakmann McDowell<div>
+          </div>
         </div>
         
       </section>
@@ -33,7 +36,7 @@
           <div class="section-title">Stack</div>
           
 
-          <div class="stack-area">
+          <div id="stack-area">
             <div class="book-card stored">
               <div class="title">Heaven's River</div>
               <div class="author">Dennis E. Taylor</div>
@@ -45,14 +48,14 @@
               <div class="series">Bobiverse</div>
             </div>
           </div>
-          <input type="button" id="add-book-btn" value="+">
+          <button id="add-book-btn">+</button>
         </section>
 
         <section id="completed-area">
 
           <div class="section-title">Shelf</div>
 
-          <div class="shelf-area">
+          <div id="shelf-area">
             <div class="book-card completed">
               <div class="book-text-info">
                 <div class="title">The Way of Kings</div>
@@ -106,6 +109,44 @@
       <section id="footer">
         <div class="credits">Mike Charpin - DeadChannelDice 2023</div>
       </section>
+
+      <dialog class="modal" id="add-book-modal">
+        <form action="">
+          <div class="input-group">
+            <input type="button" class="exit-btn" id="modal-exit-btn" value="X">
+            
+            <div class="input-field" id="book-title-input">
+              <input type="text" name="book_title" id="book_title" placeholder="Title">
+            </div>
+
+            <div class="input-field" id="book-author-input">
+              <input type="text" name="book_author" id="book_author" placeholder="Author">
+            </div>
+
+            <div class="input-field" id="book-series-input">
+              <input type="text" name="book_series" id="book_series" placeholder="Series">
+            </div>
+
+            <div id="modal-add-remove">
+              <input type="button" class="modal-btn" id="modal-add-btn" value="Add">
+              <input type="button" class="modal-btn" id="delete-btn" value="Delete">
+            </div>
+          
+
+
+            <div class="modal-input-btn" id="move-btn">
+              <div class="label">Location</div>
+              <input type="button" class="modal-btn" id="current-btn" value="Current">
+              <input type="button" class="modal-btn" id="stack-btn" value="Stack">
+              <input type="button" class="modal-btn" id="shelf-btn" value="Shelf">
+              
+            </div>
+
+            
+
+          </div>
+        </form>
+      </dialog>
 
     </div>
     <script type="module" src="/main.js"></script>
