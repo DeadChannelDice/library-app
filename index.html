@@ -111,10 +111,10 @@
       </section>
 
       <dialog class="modal" id="add-book-modal">
-        <form action="">
+        <form action="https://httpbin.org/post" method="post">
           <div class="input-group">
             <input type="button" class="exit-btn" id="modal-exit-btn" value="X">
-            
+
             <div class="input-field" id="book-title-input">
               <input type="text" name="book_title" id="book_title" placeholder="Title">
             </div>
@@ -128,7 +128,8 @@
             </div>
 
             <div id="modal-add-remove">
-              <input type="button" class="modal-btn" id="modal-add-btn" value="Add">
+              <input type="submit" class="modal-btn" id="modal-add-btn" value="Add">
+          
               <input type="button" class="modal-btn" id="delete-btn" value="Delete">
             </div>
           

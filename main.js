@@ -16,3 +16,33 @@ addBtn.addEventListener('click', () => {
 exitBtn.addEventListener('click', () => {
   addBookModal.close()
 })
+
+
+class Book {
+  constructor (
+    title = 'n/a',
+    author = 'n/a',
+    series = 'n/a',
+    location = 'n/a'
+  ) {
+    this.title = title
+    this.author = author
+    this.series = series
+    this.location = location
+  }
+}
+
+class Library {
+  constructor() {
+    this.books = []
+  }
+
+  addBook(newBook) {
+    this.books.push(newBook)
+  }
+
+  removeBook(title){
+    
+  }
+}
+
