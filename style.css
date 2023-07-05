@@ -28,7 +28,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
   --pink: #e56997;
-  --purple: #BD97CB;
+  --purple: #9665a8;
   --yellow: #fbc740;
   --blue: #66d2d6;
   --white: #f1fffd;
@@ -57,6 +57,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 10rem;
   background-color: var(--blue);
   border-bottom: .5rem solid var(--pink);
@@ -64,16 +65,32 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .app-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin: 1rem;
+  color: var(--white);
+  font-size: 4rem;
+  margin: .25rem;
+}
 
+#add-book-btn {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pink);
+  color: var(--white);
+  margin: 1rem;
+  border-radius: 2rem;
+  border:  3px solid #d15f89;
+  height: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #checkout-area {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 18rem;
+  height: 20rem;
   background-color: var(--yellow);
 }
 
@@ -82,12 +99,14 @@ p, h1, h2, h3, h4, h5, h6 {
 #storage-area {
   display: flex;
   align-items: start;
-  justify-content: start;
+  justify-content: center;
   height: 100%;
 
 }
 
 #library-area {
+  display: flex;
+  flex-direction: column;
   width: 40%;
   height: 100%;
   background-color: var(--white);
@@ -95,6 +114,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .book-card {
   background-color: var(--purple);
+  color: var(--white);
   margin: 1rem;
   padding: 1rem;
   height: 7rem;
@@ -121,14 +141,27 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 15rem;
 }
 
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: italic;
+  opacity: .4;
+  text-align: center;
+}
+
+
 #completed-area {
   width: 60%;
   height: 100%;
+  background-color: var(--grey);
+}
+
+.shelf-area {
   display: flex;
   align-content:flex-start;
   flex-wrap: wrap;
-  background-color: var(--grey);
-
+  padding: 1rem;
 }
 
 #footer {
@@ -137,5 +170,6 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   height: 5rem;
   background-color: var(--blue);
+  color: var(--white);
   border-top: .5rem solid var(--pink);
 }
