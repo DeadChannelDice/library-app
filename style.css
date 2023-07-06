@@ -37,6 +37,25 @@ p, h1, h2, h3, h4, h5, h6 {
 
 }
 
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+  background-color: #bbb;
+}
+
 #app {
   font-family: 'Raleway', sans-serif;
   display: flex;
@@ -94,6 +113,12 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: var(--yellow);
 }
 
+#current-read-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 
 #storage-area {
@@ -128,6 +153,11 @@ p, h1, h2, h3, h4, h5, h6 {
 .completed {
   width: 7rem;
   height: 15rem;
+}
+
+.current-read {
+  min-width: 20rem;
+  max-width: 25rem;
 }
 
 .shelved {
