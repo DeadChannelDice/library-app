@@ -57,7 +57,7 @@
 
           <div id="shelf-area">
             <div class="book-card completed">
-              <div class="book-text-info">
+              <div class="book-text-info shelved">
                 <div class="title">The Way of Kings</div>
                 <div class="author">Brandon Sanderson</div>
                 <div class="series">The Stormlight Archives</div>
@@ -111,12 +111,12 @@
       </section>
 
       <dialog class="modal" id="add-book-modal">
-        <form action="https://httpbin.org/post" method="post">
+        <form action="https://httpbin.org/post" method="post" id="add-book-form">
           <div class="input-group">
             <input type="button" class="exit-btn" id="modal-exit-btn" value="X">
 
             <div class="input-field" id="book-title-input">
-              <input type="text" name="book_title" id="book_title" placeholder="Title">
+              <input type="text" name="book_title" id="book_title" placeholder="Title" required>
             </div>
 
             <div class="input-field" id="book-author-input">
@@ -129,8 +129,6 @@
 
             <div id="modal-add-remove">
               <input type="submit" class="modal-btn" id="modal-add-btn" value="Add">
-          
-              <input type="button" class="modal-btn" id="delete-btn" value="Delete">
             </div>
           
 
@@ -142,9 +140,6 @@
               <input type="button" class="modal-btn" id="shelf-btn" value="Shelf">
               
             </div>
-
-            
-
           </div>
         </form>
       </dialog>

@@ -134,7 +134,7 @@ p, h1, h2, h3, h4, h5, h6 {
   height: 15rem;
 }
 
-.book-text-info {
+.shelved {
   transform-origin: left;
   transform: translate(2.5rem, -1.5rem) rotate(90deg);
   height: auto;
