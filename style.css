@@ -75,9 +75,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 10rem;
   background-color: var(--blue);
   border-bottom: .5rem solid var(--pink);
 }
@@ -85,8 +84,9 @@ p, h1, h2, h3, h4, h5, h6 {
 .app-title {
   font-family: 'Playfair Display', serif;
   color: var(--white);
-  font-size: 4rem;
-  margin: .25rem;
+  font-size: 2.5rem;
+  padding: .15rem;
+  text-align: center;
 }
 
 #add-book-btn {
@@ -109,11 +109,12 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 20rem;
+  padding: 1rem;
   background-color: var(--yellow);
 }
 
 #current-read-area {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +126,7 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: start;
   justify-content: center;
-  height: 100%;
+  height: auto;
 
 }
 
@@ -133,7 +134,7 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 100%;
+  height: auto;
   background-color: var(--white);
 }
 
