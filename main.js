@@ -7,14 +7,18 @@ const addBookModal = document.querySelector('#add-book-modal')
 // const moveBookStackBtn = document.querySelector('#stack-btn')
 // const moveBookShelfBtn = document.querySelector('#shelf-btn')
 // const deleteBookBtn = document.querySelector('#delete-btn')
-const exitBtn = document.querySelector('#modal-exit-btn')
+const exitBtn = document.querySelector('#add-modal-exit-btn')
 const bookTitle = document.querySelector('#book_title')
 const bookAuthor = document.querySelector('#book_author')
 const bookSeries = document.querySelector('#book_series')
 const bookLocationBtns = document.querySelectorAll('input[name="location"]') 
-const form = document.querySelector('#add-book-form')
+const addForm = document.querySelector('#add-book-form')
 const bookCards = document.querySelectorAll('.book-card')
 const app = document.querySelector('#app')
+const editForm = document.querySelector('#edit-book-form')
+const editBookModal = document.querySelector('#edit-book-modal')
+const editExitBtn = document.querySelector('#edit-modal-exit-btn')
+const editBookLocationBtns = document.querySelectorAll('input[name="edit-location"]')
 
 addBtn.addEventListener('click', () => {
   clearForm()
@@ -25,7 +29,13 @@ exitBtn.addEventListener('click', () => {
   addBookModal.close()
 })
 
-form.addEventListener("submit", (e) => {
+editExitBtn.addEventListener('click', () => {
+  editBookModal.close()
+})
+
+
+
+addForm.addEventListener("submit", (e) => {
   e.preventDefault()
   let bookLocation
 
@@ -41,10 +51,11 @@ form.addEventListener("submit", (e) => {
     bookSeries.value, 
     bookLocation
   )
+
   library.addBook(newBook)
+  library.saveLibraryToLocalStorage()
   genBooks()
   addBookModal.close()
-  library.saveLibraryToLocalStorage()
   console.log(library)
 })
 
@@ -177,40 +188,54 @@ const genBooks = () => {
   applyEventListeners()
 }
 
-library.loadLibraryFromLocalStorage()
-genBooks()
+
+
+
+const bookTitleEdit = document.querySelector('#book_title_edit')
+const bookAuthorEdit = document.querySelector('#book_author_edit')
+const bookSeriesEdit = document.querySelector('#book_series_edit')
+const stackBtnEdit = document.querySelector('#stack_btn_edit')
+const currentBtnEdit = document.querySelector('#current_btn_edit')
+const shelfBtnEdit = document.querySelector('#shelf_btn_edit')
+
 
 const editBook = (index) => {
   const book = library.getBook(index)
-  let newBookLocation = ""
-  console.log(book)
-  addBookModal.showModal()
-  clearForm()
-  bookTitle.value = book.title
-  bookAuthor.value = book.author
-  bookSeries.value = book.series
+  editBookModal.showModal()
+  bookTitleEdit.value = book.title
+  bookAuthorEdit.value = book.author
+  bookSeriesEdit.value = book.series
 
-  // bookLocationBtns.forEach((radio) => {
-  //   if(radio.value === book.location) {
-  //     radio.checked
-  //   } else {
-  //     radio.unchecked
-  //     }
-  // })
 
-  form.addEventListener('submit', (e) => {
+
+  editForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const updatedTitle = bookTitle.value
-    const updatedAuthor = bookAuthor.value
-    const updatedSeries = bookSeries.value
-
+    const updatedTitle = bookTitleEdit.value
+    const updatedAuthor = bookAuthorEdit.value
+    const updatedSeries = bookSeriesEdit.value
     library.editBook(index, updatedTitle, updatedAuthor, updatedSeries)
-    // library.changeBookLocation(index, updatedLocation)
     library.saveLibraryToLocalStorage()
-    addBookModal.close()
+    editBookModal.close()
     genBooks()
   })
 
+
+  // let updatedLocation 
+  
+  // for (const editBookLocationBtn of editBookLocationBtns) {
+  //   if (editBookLocationBtn.checked) {
+  //     updatedLocation = editBookLocationBtn.value
+  //   }
+  // }
+
+
+  
+
+ 
+  
+ 
+
+  
   
 }
 
@@ -218,4 +243,11 @@ const editBook = (index) => {
 
 
 
+library.loadLibraryFromLocalStorage()
+genBooks()
 
+ // bookLocationBtns.forEach((radio) => {
+  //   if(radio.checked) {
+  //     radio.value === updatedLocation
+  //   } 
+  // })

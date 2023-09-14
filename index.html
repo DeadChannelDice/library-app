@@ -104,7 +104,7 @@
       <dialog class="modal" id="add-book-modal">
         <form action="https://httpbin.org/post" method="post" id="add-book-form">
           <div class="input-group">
-            <input type="button" class="exit-btn" id="modal-exit-btn" value="X">
+            <input type="button" class="exit-btn" id="add-modal-exit-btn" value="X">
 
             <div class="input-field" id="book-title-input">
               <input type="text" name="book_title" id="book_title" placeholder="Title" required>
@@ -119,11 +119,11 @@
             </div>
 
             <div id="modal-add-remove">
-              <input type="submit" class="modal-btn" id="modal-add-btn" value="Save">
+              <input type="submit" class="modal-btn" id="modal-add-btn" value="Add">
             </div>
           
             
-              <!-- <div class="radio-toolbar">
+              <div class="radio-toolbar">
                 <input type="radio" id="stack-btn" name="location" value="stack-area" checked>
                 <label for="stack-btn">Stack</label>
               
@@ -132,7 +132,45 @@
               
                 <input type="radio" id="shelf-btn" name="location" value="shelf-area">
                 <label for="shelf-btn">Shelf</label>
-              </div> -->
+              </div>
+            
+          
+          </div>
+        </form>
+      </dialog>
+
+      <dialog class="modal" id="edit-book-modal">
+        <form action="https://httpbin.org/post" method="post" id="edit-book-form">
+          <div class="input-group">
+            <input type="button" class="exit-btn" id="edit-modal-exit-btn" value="X">
+
+            <div class="input-field" id="book-title-input">
+              <input type="text" name="book_title" id="book_title_edit" placeholder="Title" required>
+            </div>
+
+            <div class="input-field" id="book-author-input">
+              <input type="text" name="book_author" id="book_author_edit" placeholder="Author">
+            </div>
+
+            <div class="input-field" id="book-series-input">
+              <input type="text" name="book_series" id="book_series_edit" placeholder="Series">
+            </div>
+
+            <div id="modal-add-remove">
+              <input type="submit" class="modal-btn" id="modal-add-btn" value="Save">
+            </div>
+          
+            
+              <div class="radio-toolbar">
+                <input type="radio" id="stack-btn_edit" name="edit-location" value="stack-area" >
+                <label for="stack-btn">Stack</label>
+              
+                <input type="radio" id="current-btn_edit" name="edit-location" value="current-read-area" >
+                <label for="current-btn">Current</label>
+              
+                <input type="radio" id="shelf-btn_edit" name="edit-location" value="shelf-area">
+                <label for="shelf-btn">Shelf</label>
+              </div>
             
           
           </div>
