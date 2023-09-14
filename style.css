@@ -37,7 +37,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 }
 
-.radio-toolbar input[type="radio"] {
+/* .radio-toolbar input[type="radio"] {
   opacity: 0;
   position: fixed;
   width: 0;
@@ -55,6 +55,35 @@ p, h1, h2, h3, h4, h5, h6 {
 .radio-toolbar input[type="radio"]:checked+label {
   background-color: #bbb;
 }
+
+.radio-toolbar input[type="radio"]:hover+label {
+  background-color: #911818;
+
+}
+
+.radio-toolbar-edit input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar-edit label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.radio-toolbar-edit input[type="radio"]:checked+label {
+  background-color: #bbb;
+}
+
+.radio-toolbar-edit input[type="radio"]:hover+label {
+  background-color: #911818;
+
+} */
 
 #app {
   font-family: 'Raleway', sans-serif;

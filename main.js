@@ -15,13 +15,11 @@ const bookLocationBtns = document.querySelectorAll('input[name="location"]')
 const addForm = document.querySelector('#add-book-form')
 const bookCards = document.querySelectorAll('.book-card')
 const app = document.querySelector('#app')
-const editForm = document.querySelector('#edit-book-form')
-const editBookModal = document.querySelector('#edit-book-modal')
-const editExitBtn = document.querySelector('#edit-modal-exit-btn')
-const editBookLocationBtns = document.querySelectorAll('input[name="edit-location"]')
+
 
 addBtn.addEventListener('click', () => {
   clearForm()
+  console.log(bookLocationBtns)
   addBookModal.showModal()
 })
 
@@ -29,14 +27,11 @@ exitBtn.addEventListener('click', () => {
   addBookModal.close()
 })
 
-editExitBtn.addEventListener('click', () => {
-  editBookModal.close()
-})
-
 
 
 addForm.addEventListener("submit", (e) => {
   e.preventDefault()
+  
   let bookLocation
 
   for (const bookLocationBtn of bookLocationBtns) {
@@ -61,10 +56,15 @@ addForm.addEventListener("submit", (e) => {
 
 class Book  {
   constructor (title, author, series, location){
+    this.bookId = Book.generateID()
     this.title = title
     this.author = author
     this.series = series
     this.location = location
+  }
+
+  static generateID() {
+    return new Date().getTime()
   }
 }
 
@@ -137,6 +137,7 @@ const createBookCard = (book) => {
   title.textContent = `${book.title}`
   author.textContent = `${book.author}`
   series.textContent = `${book.series}`
+  bookCard.setAttribute('data-book-id', book.bookId)
 
   bookCard.appendChild(bookTextInfo)
   bookTextInfo.appendChild(title)
@@ -156,16 +157,22 @@ const createBookCard = (book) => {
     default: 
       stackArea.appendChild(bookCard)
   } 
+
+  
 }
 
 const applyEventListeners = () => {
   const bookCardArray = [...document.querySelectorAll(".book-card")]
 
+
   bookCardArray.forEach((bookCard) => {
     bookCard.addEventListener('click', () => {
-      const clickedBookTitle = bookCard.querySelector('.title').textContent
+      console.log(bookCard)
+      const clickedBookId = bookCard.dataset.bookId
+      console.log(clickedBookId)
       const libraryData = JSON.parse(localStorage.getItem('library'))
-      const bookIndex = libraryData.findIndex((book) => book.title === clickedBookTitle)
+      const bookIndex = libraryData.findIndex((book) => book.bookId == clickedBookId)
+      console.log(libraryData)
       
       if (bookIndex != -1) {
         editBook(bookIndex)
@@ -181,7 +188,7 @@ const genBooks = () => {
   stackArea.innerHTML = ''
   currentReadArea.innerHTML = ''
   shelfArea.innerHTML = ''
-  
+  library.loadLibraryFromLocalStorage()
   library.library.forEach((book) => {
     return createBookCard(book)
   })
@@ -194,60 +201,64 @@ const genBooks = () => {
 const bookTitleEdit = document.querySelector('#book_title_edit')
 const bookAuthorEdit = document.querySelector('#book_author_edit')
 const bookSeriesEdit = document.querySelector('#book_series_edit')
-const stackBtnEdit = document.querySelector('#stack_btn_edit')
-const currentBtnEdit = document.querySelector('#current_btn_edit')
-const shelfBtnEdit = document.querySelector('#shelf_btn_edit')
+const stackBtnEdit = document.querySelector('#stack-btn-edit')
+const currentBtnEdit = document.querySelector('#current-btn-edit')
+const shelfBtnEdit = document.querySelector('#shelf-btn-edit')
+const editForm = document.querySelector('#edit-book-form')
+const editBookModal = document.querySelector('#edit-book-modal')
+const editExitBtn = document.querySelector('#edit-modal-exit-btn')
+const editBookLocationBtns = document.querySelectorAll('input[name="edit-location"]')
+
+editExitBtn.addEventListener('click', () => {
+  editBookModal.close()
+})
+
+
 
 
 const editBook = (index) => {
   const book = library.getBook(index)
+  console.log(book)
   editBookModal.showModal()
   bookTitleEdit.value = book.title
   bookAuthorEdit.value = book.author
   bookSeriesEdit.value = book.series
 
-
+  for(const editBookLocationBtn of editBookLocationBtns) {
+    if(book.location === editBookLocationBtn.value){
+      editBookLocationBtn.checked = true
+    }
+  }
 
   editForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const updatedTitle = bookTitleEdit.value
     const updatedAuthor = bookAuthorEdit.value
     const updatedSeries = bookSeriesEdit.value
-    library.editBook(index, updatedTitle, updatedAuthor, updatedSeries)
+    let updatedLocation = book.location
+
+
+    
+
+    for (const editBookLocationBtn of editBookLocationBtns) {
+      if (editBookLocationBtn.checked) {
+        updatedLocation = editBookLocationBtn.value
+      }
+    }
+
+
+
+
+    library.editBook(index, updatedTitle, updatedAuthor, updatedSeries, updatedLocation)
     library.saveLibraryToLocalStorage()
     editBookModal.close()
     genBooks()
   })
-
-
-  // let updatedLocation 
-  
-  // for (const editBookLocationBtn of editBookLocationBtns) {
-  //   if (editBookLocationBtn.checked) {
-  //     updatedLocation = editBookLocationBtn.value
-  //   }
-  // }
-
-
-  
-
- 
-  
- 
-
-  
-  
 }
 
 
 
 
 
-library.loadLibraryFromLocalStorage()
-genBooks()
 
- // bookLocationBtns.forEach((radio) => {
-  //   if(radio.checked) {
-  //     radio.value === updatedLocation
-  //   } 
-  // })
+genBooks()
