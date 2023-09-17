@@ -119,7 +119,7 @@
             </div>
 
             <div id="modal-add-remove">
-              <input type="submit" class="modal-btn" id="modal-add-btn" value="Add">
+              <button type="submit" class="modal-btn" id="modal-add-btn" value="Add">Add</button>
             </div>
           
             
@@ -145,33 +145,34 @@
             <input type="button" class="exit-btn" id="edit-modal-exit-btn" value="X">
 
             <div class="input-field" id="book-title-input">
-              <input type="text" name="book_title" id="book_title_edit" placeholder="Title" required>
+              <input type="text" name="book_title_edit" id="book_title_edit" placeholder="Title" required>
             </div>
 
             <div class="input-field" id="book-author-input">
-              <input type="text" name="book_author" id="book_author_edit" placeholder="Author">
+              <input type="text" name="book_author_edit" id="book_author_edit" placeholder="Author">
             </div>
 
             <div class="input-field" id="book-series-input">
-              <input type="text" name="book_series" id="book_series_edit" placeholder="Series">
+              <input type="text" name="book_series_edit" id="book_series_edit" placeholder="Series">
             </div>
 
-            <div id="modal-add-remove-edit">
-              <input type="submit" class="modal-btn" id="modal-add-btn" value="Save">
-            </div>
+            
           
             
               <div class="radio-toolbar-edit">
                 <input type="radio" id="stack-btn-edit" name="edit-location" value="stack-area">
-                <label for="stack-btn">Stack</label>
+                <label for="stack-btn-edit">Stack</label>
               
                 <input type="radio" id="current-btn-edit" name="edit-location" value="current-read-area" >
-                <label for="current-btn">Current</label>
+                <label for="current-btn-edit">Current</label>
               
                 <input type="radio" id="shelf-btn-edit" name="edit-location" value="shelf-area">
-                <label for="shelf-btn">Shelf</label>
+                <label for="shelf-btn-edit">Shelf</label>
               </div>
             
+              <div id="modal-add-remove-edit">
+                <button type="submit" class="modal-btn" id="modal-save-btn" value="Save">Save</button>
+              </div>
           
           </div>
         </form>
