@@ -182,7 +182,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .shelved {
   transform-origin: left;
   transform: translate(2.5rem, -1.5rem) rotate(90deg);
-  width: auto;
+  width: 22rem;
   height: auto;
   
 }
