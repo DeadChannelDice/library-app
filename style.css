@@ -73,6 +73,8 @@ p, h1, h2, h3, h4, h5, h6 {
 #library-area {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background-color: var(--white);
@@ -80,24 +82,30 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #stack-area {
   display: flex;
-  align-content:flex-start;
-  flex-wrap: wrap;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
   min-height: 10rem;
+  width: 95%;
+  height: 100%;
 }
 
 #completed-area {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: var(--grey);
 }
 
 #shelf-area {
   display: flex;
-  align-content:flex-start;
+  align-items:flex-start;
   flex-wrap: wrap;
   padding: 1rem;
   min-height: 10rem;
+  width: 100%;
 }
 
 #footer {
@@ -109,6 +117,7 @@ p, h1, h2, h3, h4, h5, h6 {
   color: var(--white);
   border-top: .5rem solid var(--pink);
   margin-top: 1rem;
+  width: 100%;
 }
 
 #add-book-btn {
@@ -149,7 +158,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .app-title {
   font-family: 'Playfair Display', serif;
   color: var(--white);
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: .15rem;
   text-align: center;
 }
@@ -162,10 +171,10 @@ p, h1, h2, h3, h4, h5, h6 {
 .book-card {
   background-color: var(--purple);
   color: var(--white);
-  margin: 1rem;
+  margin-top: 1rem;
   padding: 1rem;
   height: 7rem;
-  width: 90%;
+  width: 95%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: .25rem;
   border: .125rem solid #b18dbe;
@@ -174,13 +183,13 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .completed {
   width: 7rem;
-  height: 15rem;
+  min-height: 25rem;
 }
 
-.current-read {
+/* .current-read {
   min-width: 20rem;
   max-width: 25rem;
-}
+} */
 
 .shelved {
   transform-origin: left;
