@@ -184,6 +184,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .completed {
   width: 7rem;
   min-height: 25rem;
+  margin: 1rem;
 }
 
 /* .current-read {
