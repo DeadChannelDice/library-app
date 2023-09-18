@@ -28,7 +28,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
   --pink: #e56997;
-  --purple: #7049af;
+  --purple: #472e6e;
   --yellow: #fbc740;
   --blue: #66d2d6;
   --white: #f1fffd;
@@ -53,10 +53,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 #checkout-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
   padding: 1rem; 
   background-color: var(--yellow);
 }
@@ -71,12 +67,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 #library-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  padding: 1rem;
   background-color: var(--white);
 }
 
@@ -84,18 +75,14 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding-bottom: 1rem;
   min-height: 10rem;
   width: 95%;
-  height: 100%;
 }
 
 #completed-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem;
   background-color: var(--grey);
 }
 
@@ -103,9 +90,9 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items:flex-start;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: .5rem;
   min-height: 10rem;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #footer {
@@ -174,7 +161,9 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-top: 1rem;
   padding: 1rem;
   height: 7rem;
-  width: 95%;
+  min-width: 15rem;
+  max-width: 25rem;
+  margin: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: .25rem;
   border: .125rem solid #b18dbe;
@@ -182,21 +171,18 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 .completed {
+  min-width: 7rem;
+  max-width: 7rem;
   width: 7rem;
   min-height: 25rem;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
-/* .current-read {
-  min-width: 20rem;
-  max-width: 25rem;
-} */
 
 .shelved {
   transform-origin: left;
-  transform: translate(2.5rem, -1.5rem) rotate(90deg);
-  height: auto;
-  width: 15rem;
+  transform: translate(3.5rem, -.5rem) rotate(90deg);
+  
 }
 
 .section-title {
