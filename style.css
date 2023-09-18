@@ -37,59 +37,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 }
 
-/* .radio-toolbar input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.radio-toolbar label {
-  display: inline-block;
-  background-color: #ddd;
-  padding: 4px 11px;
-  font-family: Arial;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.radio-toolbar input[type="radio"]:checked+label {
-  background-color: #bbb;
-}
-
-.radio-toolbar input[type="radio"]:hover+label {
-  background-color: #911818;
-
-}
-
-.radio-toolbar-edit input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.radio-toolbar-edit label {
-  display: inline-block;
-  background-color: #ddd;
-  padding: 4px 11px;
-  font-family: Arial;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.radio-toolbar-edit input[type="radio"]:checked+label {
-  background-color: #bbb;
-}
-
-.radio-toolbar-edit input[type="radio"]:hover+label {
-  background-color: #911818;
-
-} */
-
 #app {
   font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 .title {
@@ -129,8 +80,15 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 1rem;
   border-radius: 2rem;
   border:  3px solid #d15f89;
+  min-width: 5rem;
   height: 5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
 }
 
 #checkout-area {
@@ -157,13 +115,16 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: start;
   justify-content: center;
   height: 100%;
+  width: 100vw;
+  flex-wrap: wrap;
 
 }
 
 #library-area {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  min-width: 23rem;
+  max-width: 40%;
   height: auto;
   background-color: var(--white);
 }
@@ -209,7 +170,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 #completed-area {
-  width: 60%;
+  min-width: 23rem;
+  max-width: 100rem;
   height: 100%;
   background-color: var(--grey);
 }
@@ -219,7 +181,10 @@ p, h1, h2, h3, h4, h5, h6 {
   align-content:flex-start;
   flex-wrap: wrap;
   padding: 1rem;
+
 }
+
+
 
 #footer {
   display: flex;
@@ -229,6 +194,7 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: var(--blue);
   color: var(--white);
   border-top: .5rem solid var(--pink);
+  margin-top: 1rem;
 }
 
 .modal {
