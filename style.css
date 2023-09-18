@@ -89,6 +89,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #shelf-area {
   display: flex;
   align-items:flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   padding: .5rem;
   min-height: 10rem;
