@@ -27,74 +27,74 @@
         </div>
       </section>
 
-      <div id="storage-area">
-        <section id="library-area">
-          <div class="section-title">Stack</div>
-          <div id="stack-area">
-            <!-- <div class="book-card">
-              <div class="title">Heaven's River</div>
-              <div class="author">Dennis E. Taylor</div>
-              <div class="series">Bobiverse</div>
-            </div>
-            <div class="book-card">
-              <div class="book-text-info">
-                <div class="title">The Rythem of War</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
-            </div> -->
+    
+      <section id="library-area">
+        <div class="section-title">Stack</div>
+        <div id="stack-area">
+          <!-- <div class="book-card">
+            <div class="title">Heaven's River</div>
+            <div class="author">Dennis E. Taylor</div>
+            <div class="series">Bobiverse</div>
           </div>
-          
-        </section>
+          <div class="book-card">
+            <div class="book-text-info">
+              <div class="title">The Rythem of War</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
+            </div>
+          </div> -->
+        </div>
+        
+      </section>
 
-        <section id="completed-area">
-          <div class="section-title">Shelf</div>
-          <div id="shelf-area">
-            <!-- <div class="book-card completed" id="book-card">
-              <div class="book-text-info shelved">
-                <div class="title">The Way of Kings</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
+      <section id="completed-area">
+        <div class="section-title">Shelf</div>
+        <div id="shelf-area">
+          <!-- <div class="book-card completed" id="book-card">
+            <div class="book-text-info shelved">
+              <div class="title">The Way of Kings</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
             </div>
-            <div class="book-card completed">
-              <div class="book-text-info shelved">
-                <div class="title">The Way of Kings</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
-            </div>
-            <div class="book-card completed">
-              <div class="book-text-info shelved">
-                <div class="title">The Way of Kings</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
-            </div>
-            <div class="book-card completed">
-              <div class="book-text-info shelved">
-                <div class="title">The Way of Kings</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
-            </div>
-            <div class="book-card completed">
-              <div class="book-text-info shelved">
-                <div class="title">The Way of Kings</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
-            </div>
-            <div class="book-card completed">
-              <div class="book-text-info shelved">
-                <div class="title">The Way of Kings</div>
-                <div class="author">Brandon Sanderson</div>
-                <div class="series">The Stormlight Archives</div>
-              </div>
-            </div> -->
           </div>
-        </section>
-      </div>
+          <div class="book-card completed">
+            <div class="book-text-info shelved">
+              <div class="title">The Way of Kings</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
+            </div>
+          </div>
+          <div class="book-card completed">
+            <div class="book-text-info shelved">
+              <div class="title">The Way of Kings</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
+            </div>
+          </div>
+          <div class="book-card completed">
+            <div class="book-text-info shelved">
+              <div class="title">The Way of Kings</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
+            </div>
+          </div>
+          <div class="book-card completed">
+            <div class="book-text-info shelved">
+              <div class="title">The Way of Kings</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
+            </div>
+          </div>
+          <div class="book-card completed">
+            <div class="book-text-info shelved">
+              <div class="title">The Way of Kings</div>
+              <div class="author">Brandon Sanderson</div>
+              <div class="series">The Stormlight Archives</div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+      
       
       <button id="add-book-btn">+</button>
 
@@ -120,20 +120,22 @@
               <input type="text" name="book_series" id="book_series" placeholder="Series">
             </div>
 
-            <div id="modal-add-remove">
-              <button type="submit" class="modal-btn" id="modal-add-btn" value="Add">Add</button>
-            </div>
+            
           
             
               <div class="radio-toolbar">
+                <input type="radio" id="current-btn" name="location" value="current-read-area" >
+                <label for="current-btn">Current</label>
+
                 <input type="radio" id="stack-btn" name="location" value="stack-area" checked>
                 <label for="stack-btn">Stack</label>
               
-                <input type="radio" id="current-btn" name="location" value="current-read-area" >
-                <label for="current-btn">Current</label>
-              
                 <input type="radio" id="shelf-btn" name="location" value="shelf-area">
                 <label for="shelf-btn">Shelf</label>
+              </div>
+
+              <div id="modal-add-remove">
+                <button type="submit" class="modal-btn" id="modal-add-btn" value="Add">Add</button>
               </div>
             
           
@@ -162,12 +164,13 @@
           
             
               <div class="radio-toolbar-edit">
-                <input type="radio" id="stack-btn-edit" name="edit-location" value="stack-area">
-                <label for="stack-btn-edit">Stack</label>
-              
+
                 <input type="radio" id="current-btn-edit" name="edit-location" value="current-read-area" >
                 <label for="current-btn-edit">Current</label>
-              
+
+                <input type="radio" id="stack-btn-edit" name="edit-location" value="stack-area">
+                <label for="stack-btn-edit">Stack</label>
+                                        
                 <input type="radio" id="shelf-btn-edit" name="edit-location" value="shelf-area">
                 <label for="shelf-btn-edit">Shelf</label>
               </div>
