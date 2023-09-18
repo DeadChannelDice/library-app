@@ -84,6 +84,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #completed-area {
   padding: 1rem;
   background-color: var(--grey);
+  height: 100%;
 }
 
 #shelf-area {
